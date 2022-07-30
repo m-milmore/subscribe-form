@@ -1,10 +1,23 @@
 {
-	"cSpell.words": [
+  "cSpell.words": [
+		"assez",
 		"browserslist",
+		"chiffres",
+		"Converkit",
 		"fbemitter",
 		"fontawesome",
 		"fortawesome",
+		"linebreak",
 		"mapvalues",
-		"Milmore"
-	]
+		"Milmore",
+		"xxxl"
+	],
+  "javascript.validate.enable": true,
+	"problems.decorations.enabled": true,
+	"outline.problems.enabled": true,
+  "workbench.colorCustomizations": {
+    "editorError.foreground": "#ff000088",
+    "editorWarning.foreground": "#ffe60033",
+    "editorInfo.foreground": "#00ff0088"
+	}
 }
