@@ -3,7 +3,7 @@ import "./App.css";
 import ThemeProvider from "react-bootstrap/ThemeProvider";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { hello } from "./netlify/functions/hello";
+import axios from "axios";
 
 const INIT_INFO = {
   firstName: "",
@@ -31,7 +31,7 @@ function App() {
     setInfo({ ...info, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const smallestArea = 201;
     const highestArea = 989;
@@ -48,15 +48,20 @@ function App() {
         `Phone area code must be between ${smallestArea} and ${highestArea} inclusively`
       );
     } else {
-      const response = hello;
-      console.log(response);
-      //   .then(() => {
-      //     setInfo(INIT_INFO);
-      //     alert(response.body.message);
-      //   })
-      //   .catch(() => {
-      //     alert("No response.");
-      //   });
+      const headers = {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+      };
+      const response = await axios
+        .get("/.netlify/functions/hello", { headers })
+        .then(() => {
+          setInfo(INIT_INFO);
+          alert(response.body.message);
+        })
+        .catch(() => {
+          alert("No response.");
+        });
     }
   };
 

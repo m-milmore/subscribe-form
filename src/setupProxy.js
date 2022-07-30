@@ -5,7 +5,7 @@ module.exports = (app) => {
     proxy("/functions/", {
       target: "http:localhost:9000",
       pathRewrite: {
-        "^\\./netlify/functions": "",
+        "^\\.netlify/functions": "",
       },
     })
   );
