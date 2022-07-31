@@ -53,8 +53,9 @@ function App() {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
       };
+      const body = {phone: stripPhone}
       const response = await axios
-        .get("/.netlify/functions/hello", { headers })
+        .get("/.netlify/functions/hello", body, { headers })
         .then(() => {
           setInfo(INIT_INFO);
           alert(response.body.message);

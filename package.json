@@ -30,7 +30,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "GENERATE_SOURCEMAP": "false",
     "api:serve": "netlify-lambda serve .netlify/functions",
     "start": "react-scripts start",
     "build": "netlify-lambda build .netlify/functions && react-scripts build",
