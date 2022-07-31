@@ -59,7 +59,8 @@ function App() {
           setInfo(INIT_INFO);
           alert(response.body.message);
         })
-        .catch(() => {
+        .catch((error) => {
+          console.error(error);
           alert("No response.");
         });
     }

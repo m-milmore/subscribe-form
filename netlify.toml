@@ -1,4 +1,11 @@
 [build]
 	command = "npm run build"
 	functions = "functions-build/"
-	publish = "build"  
+	publish = "build"
+	command="echo 'message'"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+	force = true
