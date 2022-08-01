@@ -59,7 +59,7 @@ function App() {
         })
         .then((response) => {
           setInfo(INIT_INFO);
-          console.log(response.data.message);
+          alert(response.data.message);
         })
         .catch((error) => {
           console.error(error);
