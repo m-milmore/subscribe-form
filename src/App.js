@@ -53,16 +53,17 @@ function App() {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
       };
-      const body = {phone: stripPhone}
       const response = await axios
-        .get("/.netlify/functions/hello", body, { headers })
-        .then(() => {
+        .get("/.netlify/functions/hello", {
+          headers,
+        })
+        .then((response) => {
           setInfo(INIT_INFO);
-          alert(response.body.message);
+          console.log(response.data.message);
         })
         .catch((error) => {
           console.error(error);
-          alert("No response.");
+          alert(error);
         });
     }
   };
