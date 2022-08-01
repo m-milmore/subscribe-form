@@ -53,6 +53,7 @@ function App() {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
       };
+      /* eslint-disable no-unused-vars */
       const response = await axios
         .get("/.netlify/functions/hello", {
           headers,
@@ -61,6 +62,7 @@ function App() {
           setInfo(INIT_INFO);
           alert(response.data.message);
         })
+        /* eslint-enable no-unused-vars */
         .catch((error) => {
           console.error(error);
           alert(error);
