@@ -1,22 +1,34 @@
 import axios from "axios";
-
-const headers = {
-  "Content-Type": "application/json",
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "GET, POST, DELETE"
-};
+require("dotenv").config();
 
 exports.handler = async (event, context) => {
-  const body = event.body; // will hold the subscriber info (firstName, lastName, email, phone)
-  const targetUrl =
-    "http://app.converkit.com/forms/designers/3455603/addSubscriber"; // this is just an example, check with the docs later
-  // need to create a connection instance to Converkit with API key, like what I did with aws s3
+  const { email, firstName, lastName, phone } = JSON.parse(event.body);
+  const targetUrl = `https://api.convertkit.com/v3/forms/${process.env.CONVERTKIT_FORM_ID}/subscribe`;
+  const headers = {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "POST",
+  };
+  const body = {
+    api_key: process.env.CONVERTKIT_API_KEY,
+    email: email,
+    first_name: firstName,
+    fields: {
+      last_name: lastName,
+      phone_number: phone,
+    },
+  };
 
   try {
     const response = await axios.post(targetUrl, body, { headers });
-    return { statusCode: 200, success: true };
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: "Success!" }),
+    };
   } catch (error) {
-    console.error(error);
-    throw error;
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: "Error!" }),
+    };
   }
 };

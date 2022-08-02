@@ -48,25 +48,38 @@ function App() {
         `Phone area code must be between ${smallestArea} and ${highestArea} inclusively`
       );
     } else {
+      const body = info;
       const headers = {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+        "Access-Control-Allow-Methods": "POST",
       };
-      /* eslint-disable no-unused-vars */
-      const response = await axios
-        .get("/.netlify/functions/hello", {
-          headers,
-        })
-        .then((response) => {
-          setInfo(INIT_INFO);
-          alert(response.data.message);
-        })
-        /* eslint-enable no-unused-vars */
-        .catch((error) => {
-          console.error(error);
-          alert(error);
-        });
+
+      // const response = await axios
+      //   .get("/.netlify/functions/hello", {
+      //     headers,
+      //   })
+      //   .then((response) => {
+      //     setInfo(INIT_INFO);
+      //     alert(response.data.message);
+      //   })
+      //   /* eslint-enable no-unused-vars */
+      //   .catch((error) => {
+      //     console.error(error);
+      //     alert(error);
+      //   });
+
+      try {
+        const response = await axios.post(
+          "/.netlify/functions/postSubscriber",
+          body,
+          { headers }
+        );
+        setInfo(INIT_INFO);
+        alert(response.data.message);
+      } catch (error) {
+        alert(error);
+      }
     }
   };
 
