@@ -21,10 +21,10 @@ exports.handler = async (event, context) => {
 
   try {
     const response = await axios.post(targetUrl, body, { headers });
-    console.log("response = ", JSON.stringify(response.response.data.message));
+    console.log("response = ", response);
     return {
       statusCode: 200,
-      body: JSON.stringify(response.response.data.message),
+      body: JSON.stringify({ message: "Success!" }),
     };
   } catch (error) {
     if (error.request) {
