@@ -70,7 +70,7 @@ function AddSubscriber() {
 
   return (
     <div className="center-display">
-      <p className="h3 ms-4 mt-3">Add Subscriber Form</p>
+      <p className="h3 ms-4 mt-3">Add_Subscriber Form</p>
       <Form onSubmit={handleSubmit} className="text-start border py-2 px-4">
         <Form.Group className="mb-3 fs-5">
           <Form.Label className="fs-6">First name</Form.Label>
