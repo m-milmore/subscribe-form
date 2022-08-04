@@ -15,7 +15,7 @@ function AddSubscriber() {
     firstName: "fn",
     lastName: "ln",
     email: "a@a.com",
-    phone: "514-386-2701",
+    phone: "222-222-2222",
   });
 
   const [submitBtnDisabled, setSubmitBtnDisabled] = useState(true);

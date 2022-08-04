@@ -4,6 +4,7 @@ import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
 import AddSubscriber from "./components/AddSubscriber";
 import FindSubscriber from "./components/FindSubscriber";
+import DeleteSubscriber from "./components/DeleteSubscriber";
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
         <Tab eventKey="find" title="Find Subscriber">
           <FindSubscriber />
         </Tab>
-        <Tab eventKey="delete" title="Delete Subscriber"></Tab>
+        <Tab eventKey="delete" title="Delete Subscriber">
+          <DeleteSubscriber />
+        </Tab>
       </Tabs>
     </div>
   );
