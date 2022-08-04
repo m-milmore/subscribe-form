@@ -27,6 +27,7 @@ function FindSubscriber() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+		setInfo(INIT_INFO)
 
     const body = email;
     const headers = {
