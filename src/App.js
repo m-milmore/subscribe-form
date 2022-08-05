@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <p className="h2 ms-4 mt-3">Subscriber Manager</p>
       <Tabs
-        defaultActiveKey="unsubscribe"
+        defaultActiveKey="add"
         id="uncontrolled-tab-example"
         className="my-4 mx-4 fs-6"
       >

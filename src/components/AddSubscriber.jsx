@@ -11,12 +11,7 @@ const INIT_INFO = {
 };
 
 function AddSubscriber() {
-  const [info, setInfo] = useState({
-    firstName: "fn",
-    lastName: "ln",
-    email: "a@a.com",
-    phone: "222-222-2222",
-  });
+  const [info, setInfo] = useState(INIT_INFO);
 
   const [submitBtnDisabled, setSubmitBtnDisabled] = useState(true);
 

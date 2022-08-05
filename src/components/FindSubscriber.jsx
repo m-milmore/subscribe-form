@@ -12,7 +12,7 @@ const INIT_INFO = {
 };
 
 function FindSubscriber() {
-  const [email, setEmail] = useState("a@a.com");
+  const [email, setEmail] = useState("");
   const [info, setInfo] = useState(INIT_INFO);
   const [findBtnDisabled, setFindBtnDisabled] = useState(true);
 

@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import axios from "axios";
 
 function UnsubscribeSubscriber() {
-  const [email, setEmail] = useState("a@a.com");
+  const [email, setEmail] = useState("");
   const [findBtnDisabled, setFindBtnDisabled] = useState(true);
 
   useEffect(() => {
