@@ -21,27 +21,23 @@ exports.handler = async (event, context) => {
 
   try {
     const response = await axios.post(targetUrl, body, { headers });
-    console.log("response = ", response);
     return {
       statusCode: 200,
       body: JSON.stringify({ message: "Success!" }),
     };
   } catch (error) {
     if (error.request) {
-      console.log("error in request");
       return {
         statusCode: 406,
         body: JSON.stringify({ message: "Request Not Accepted!" }),
       };
     }
     if (error.response) {
-      console.log("error in response");
       return {
         statusCode: error.response.status,
         body: JSON.stringify(error.response.data.message),
       };
     }
-    console.log("error in server or Convertkit");
     return {
       statusCode: 500,
       body: JSON.stringify({
