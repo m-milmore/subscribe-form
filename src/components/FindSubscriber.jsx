@@ -38,7 +38,7 @@ function FindSubscriber() {
 
     try {
       const response = await axios.post(
-        "/.netlify/functions/getSubscriber",
+        "/.netlify/functions/findSubscriber",
         body,
         {
           headers,
@@ -55,7 +55,7 @@ function FindSubscriber() {
         setInfo({ first_name, email_address, last_name, phone_number });
       }
     } catch (error) {
-      alert(error.response.data.message);
+      alert(error.message);
     }
   };
 
@@ -87,7 +87,7 @@ function FindSubscriber() {
               type="submit"
               disabled={findBtnDisabled}
             >
-              Find Email
+              FIND
             </Button>
           </div>
         </Form>

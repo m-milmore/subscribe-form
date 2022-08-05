@@ -41,7 +41,7 @@ function UnsubscribeSubscriber() {
 
   return (
     <div className="center-display">
-      <p className="h3 mx-4 mt-3">Delete_Subscriber Form</p>
+      <p className="h3 mx-4 mt-3">Unsubscribe_Subscriber Form</p>
       <Form onSubmit={handleSubmit} className="text-start border py-2 px-4">
         <Form.Group className="mb-3 fs-5">
           <Form.Label className="fs-6">Email address</Form.Label>

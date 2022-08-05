@@ -58,11 +58,11 @@ function AddSubscriber() {
           body,
           { headers }
         );
-        setInfo(INIT_INFO);
-        alert(response.data.message);
+        alert("Success!");
       } catch (error) {
-        alert(error.response.data.message);
+        alert("Error!");
       }
+      setInfo(INIT_INFO);
     }
   };
 
